@@ -1,0 +1,12 @@
+version: '2'
+services:
+  tarantool:
+    build: tarantool/
+    image: avro
+  nginx:
+    build: nginx/
+    image: avro-nginx
+    depends_on:
+     - tarantool
+    ports:
+     - "127.0.0.1:11112:80"
