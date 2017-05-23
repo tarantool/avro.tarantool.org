@@ -3,6 +3,7 @@ services:
   tarantool:
     build: tarantool/
     image: avro
+    restart: always
   nginx:
     build: nginx/
     image: avro-nginx
@@ -10,3 +11,4 @@ services:
      - tarantool
     ports:
      - "127.0.0.1:11112:80"
+    restart: always
